@@ -1,0 +1,30 @@
+[
+  {
+    "src": "/",
+    "title": "Home"
+  },
+  {
+    "src": "/musso",
+    "title": "Musso"
+  },
+  {
+    "src": "/barbaresco",
+    "title": "Barbaresco"
+  },
+  {
+    "src": "/vini",
+    "title": "Vini"
+  },
+  {
+    "src": "/degustazioni",
+    "title": "Degustazioni"
+  },
+  {
+    "src": "/premi",
+    "title": "Premi"
+  },
+  {
+    "src": "/contatti",
+    "title": "Contatti"
+  }
+]
