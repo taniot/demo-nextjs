@@ -1,4 +1,3 @@
-import React from 'react';
 import mainMenu from '../../lib/mockData/MainMain.json';
 import Link from 'next/link';
 
