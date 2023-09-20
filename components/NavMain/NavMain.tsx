@@ -1,5 +1,6 @@
 import mainMenu from '../../lib/mockData/MainMain.json';
 import Link from 'next/link';
+import ChangeColor from '../ChangeColor/ChangeColor';
 
 const NavMain = () => {
   return (
@@ -15,6 +16,9 @@ const NavMain = () => {
             </Link>
           </li>
         ))}
+        <li>
+          <ChangeColor />
+        </li>
       </ul>
     </nav>
   );

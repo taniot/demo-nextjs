@@ -1,3 +1,9 @@
+import PageTest from '@/components/PageTest/PageTest';
+
 export default function Home() {
-  return <div>Home page nextjsx</div>;
+  return (
+    <div>
+      <PageTest />
+    </div>
+  );
 }
