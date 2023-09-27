@@ -1,24 +1,27 @@
 const client = async (query: string) => {
-  let endpoint;
-
   try {
+    let endpoint;
     if (process.env.WP_DATI) {
       endpoint = process.env.WP_DATI;
     } else {
-      throw new Error('WP DATI non trovata');
+      throw new Error('WP_DATI environment variable is not set');
     }
 
-    const result = await fetch(endpoint, {
+    const res = await fetch(endpoint, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
-        authentication: `bearer: XJIN 5DXh 4FkR K8ZP qHpY 2uT3`,
+        'Content-Type': 'application/json',
+        Authorization: `Basic ${btoa(
+          `${process.env.WP_USER}:${process.env.WP_KEY}`
+        )}`,
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({
+        query,
+      }),
     });
 
-    const data = await result.json();
-    console.log(data);
+    const data = await res.json();
+
     return data;
   } catch (error) {
     console.log(error);

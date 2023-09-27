@@ -3,11 +3,14 @@ import client from '@/lib/client';
 import querySettings from '@/lib/queries/allSetting';
 
 export default async function Home() {
-  const result = await client(querySettings);
-  console.log(result);
+  const settings = await client(querySettings);
+
   return (
     <div>
-      <div>risultato query</div>
+      <div>
+        <h2>Risultato query</h2>
+        <p>{settings.data.allSettings.readingSettingsPageOnFront}</p>
+      </div>
       <PageTest />
     </div>
   );
