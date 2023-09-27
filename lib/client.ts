@@ -1,31 +1,30 @@
-const client = async (query: string) => {
-  try {
-    let endpoint;
-    if (process.env.WP_DATI) {
-      endpoint = process.env.WP_DATI;
-    } else {
-      throw new Error('WP_DATI environment variable is not set');
-    }
+import { GraphQLClient } from 'graphql-request';
 
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Basic ${btoa(
-          `${process.env.WP_USER}:${process.env.WP_KEY}`
-        )}`,
-      },
-      body: JSON.stringify({
-        query,
-      }),
-    });
+let endpoint;
+if (process.env.WP_DATI) {
+  endpoint = process.env.WP_DATI;
+} else {
+  throw new Error('WP_DATI environment variable is not set');
+}
 
-    const data = await res.json();
+let user;
+if (process.env.WP_DATI) {
+  user = process.env.WP_USER;
+} else {
+  throw new Error('WP_DATI environment variable is not set');
+}
 
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+let key;
+if (process.env.WP_USER) {
+  key = process.env.WP_KEY;
+} else {
+  throw new Error('WP_DATI environment variable is not set');
+}
+
+let headers = {
+  authorization: `Basic ${btoa(`${user}:${key}`)}`,
 };
+
+const client = new GraphQLClient(endpoint, { headers }) || null;
 
 export default client;
