@@ -4,24 +4,20 @@
     "title": "Home"
   },
   {
-    "src": "/musso",
-    "title": "Musso"
+    "src": "/la-nostra-storia",
+    "title": "Storia"
   },
   {
-    "src": "/barbaresco",
-    "title": "Barbaresco"
+    "src": "/pagina/figlia",
+    "title": "Subpage"
   },
   {
-    "src": "/vini",
-    "title": "Vini"
+    "src": "/vino/vino-di-prova/",
+    "title": "Vino"
   },
   {
-    "src": "/degustazioni",
-    "title": "Degustazioni"
-  },
-  {
-    "src": "/premi",
-    "title": "Premi"
+    "src": "/evento/evento-di-prova/",
+    "title": "Evento"
   },
   {
     "src": "/contatti",
