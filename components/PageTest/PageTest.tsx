@@ -1,11 +1,15 @@
 'use client';
-import { useContext } from 'react';
-import { AppContext } from '@/app/app-provider';
+import { useContext, useRef } from 'react';
+import { AppContext } from '@/app/[locale]/app-provider';
+import { useTranslations } from 'next-intl';
 
 const PageTest = () => {
   const { state, methods } = useContext(AppContext);
   const { counter, theme } = state;
   const { setCounter } = methods;
+  const t = useTranslations('Index');
+  const ref = useRef<HTMLDivElement>(null);
+
   return (
     <div>
       <p>Il contatore è: {counter}</p>
@@ -13,6 +17,8 @@ const PageTest = () => {
       <button onClick={() => setCounter((prevCounter) => prevCounter + 1)}>
         Prova Context
       </button>
+
+      <div>Testo in Lingua: {t('title')}</div>
     </div>
   );
 };

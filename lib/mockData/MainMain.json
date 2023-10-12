@@ -19,8 +19,9 @@
     "src": "/evento/evento-di-prova/",
     "title": "Evento"
   },
+
   {
-    "src": "/contatti",
+    "src": "/gravity-form",
     "title": "Contatti"
   }
 ]

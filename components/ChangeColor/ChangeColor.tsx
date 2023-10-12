@@ -1,6 +1,6 @@
 'use client';
 import { useContext } from 'react';
-import { AppContext } from '@/app/app-provider';
+import { AppContext } from '@/app/[locale]/app-provider';
 
 const ChangeColor = () => {
   const { methods } = useContext(AppContext);

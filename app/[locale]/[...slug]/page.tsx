@@ -12,9 +12,9 @@ export async function generateMetadata({ params, searchParams }, parent) {
   };
 }
 
-const PageSlug = async ({ params }) => {
-  const entry = await getNodeByURI(createURI(params.slug));
-  console.log({ entry });
+const PageSlug = async (props) => {
+  console.log(props);
+  const entry = await getNodeByURI(createURI(props.params.slug));
 
   if (!entry) notFound();
 

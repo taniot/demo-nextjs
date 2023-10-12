@@ -1,3 +1,4 @@
+import GravityForm from '@/components/GravityForm/GravityForm';
 import PageTest from '@/components/PageTest/PageTest';
 import client from '@/lib/client';
 import querySettings, { type allSettings } from '@/lib/queries/allSetting';
@@ -17,7 +18,6 @@ export default async function Home() {
         <p>{pageResult.page.campiPagine.campoDiProva}</p>
         <div dangerouslySetInnerHTML={{ __html: pageResult.page.content }} />
       </div>
-      <PageTest />
     </div>
   );
 }
